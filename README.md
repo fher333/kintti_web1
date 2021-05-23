@@ -12,7 +12,7 @@ Deployment: Heroku
 Run Locally
 # 1. Clone repo
 
-$ git clone git@github.com:basir/amazona.git
+$ https://github.com/fher333/kintti_web1.git
 
 $ cd amazona
 
