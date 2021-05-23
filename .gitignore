@@ -1,9 +1,9 @@
 # dependencies
 node_modules/
-frontend/node_modules/
+
 /.pnp
 .pnp.js
-
+direccion_mongo.txt
 # testing
 /coverage
 
