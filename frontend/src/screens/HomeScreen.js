@@ -4,7 +4,7 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
-
+//import { IntlProvider, addLocaleData } from "react-intl";
 
 export default function HomeScreen() {
   const dispatch = useDispatch();

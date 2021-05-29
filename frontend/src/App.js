@@ -21,6 +21,9 @@ import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
 //import { Route } from 'react-router-dom/cjs/react-router-dom.min';
+//import { IntlProvider, FormattedMessage } from "react-intl";
+//import messages from "./messages";
+
 
 function App() {
   const cart = useSelector(state => state.cart);

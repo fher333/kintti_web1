@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom'; 
 import { signin } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import PhoneInput, { formatPhoneNumber, formatPhoneNumberIntl, isValidPhoneNumber, isPossiblePhoneNumber } from 'react-phone-number-input';
 
 export default function SigninScreen(props) {
+    const [value, setValue] = useState();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const redirect = props.location.search
@@ -64,8 +67,40 @@ export default function SigninScreen(props) {
                     <div>
                         New fan? <Link to={`/register?redirect=${redirect}`}>Create your fan account</Link>
                     </div>
+
                 </div>
+                
+                <div>
+                    <PhoneInput
+                        placeholder="Enter phone number"
+                        countrySelectProps={{ unicodeFlags: false }}//false muestra la bandera , true muestra el codigo del pais
+                        value={value}
+                        onChange={setValue}
+                        error={value ? (isValidPhoneNumber(value) ? undefined : 'Invalid phone number') : 'Phone number required'} />
+Is possible: {value && isPossiblePhoneNumber(value) ? 'true' : 'false'}
+Is valid: {value && isValidPhoneNumber(value) ? 'true' : 'false'}
+National: {value && formatPhoneNumber(value)}
+International: {value && formatPhoneNumberIntl(value)}
+                </div>
+
+                
+
+                
             </form>
+
         </div>
     );
 }
+
+{/* <div>
+                    <PhoneInput
+                        placeholder="Enter phone number"
+                        countrySelectProps={{ unicodeFlags: false }}//false muestra la bandera , true muestra el codigo del pais
+                        value={value}
+                        onChange={setValue}
+                        error={value ? (isValidPhoneNumber(value) ? undefined : 'Invalid phone number') : 'Phone number required'} />
+Is possible: {value && isPossiblePhoneNumber(value) ? 'true' : 'false'}
+Is valid: {value && isValidPhoneNumber(value) ? 'true' : 'false'}
+National: {value && formatPhoneNumber(value)}
+International: {value && formatPhoneNumberIntl(value)}
+                </div> */}

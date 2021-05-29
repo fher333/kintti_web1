@@ -14,7 +14,7 @@ Run Locally
 
 $ https://github.com/fher333/kintti_web1.git
 
-$ cd amazona
+$ cd kintti_web1
 
 
 # 2. Setup MongoDB
