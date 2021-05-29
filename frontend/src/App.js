@@ -20,6 +20,10 @@ import ProductListScreen from './screens/ProductListScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import UserListScreen from './screens/UserListScreen';
+import UserEditScreen from './screens/UserEditScreen';
+import SellerRoute from './components/SellerRoute';
+
 //import { Route } from 'react-router-dom/cjs/react-router-dom.min';
 //import { IntlProvider, FormattedMessage } from "react-intl";
 //import messages from "./messages";
@@ -70,6 +74,21 @@ function App() {
                   <Link to="/signin">Sign In</Link>
                 )
             }
+             {userInfo && userInfo.isSeller && (
+              <div className="dropdown">
+                <Link to="#admin">
+                  Seller <i className="fa fa-caret-down"></i>
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/productlist/seller">Products</Link>
+                  </li>
+                  <li>
+                    <Link to="/orderlist/seller">Orders</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <Link to="#admin">
@@ -115,11 +134,26 @@ function App() {
            <AdminRoute
             path="/productlist"
             component={ProductListScreen}
+            exact
           ></AdminRoute>
           <AdminRoute
             path="/orderlist"
             component={OrderListScreen}
+            exact
           ></AdminRoute>
+          <AdminRoute path="/userlist" component={UserListScreen}></AdminRoute>
+          <AdminRoute
+            path="/user/:id/edit"
+            component={UserEditScreen}
+          ></AdminRoute>
+          <SellerRoute
+            path="/productlist/seller"
+            component={ProductListScreen}
+          ></SellerRoute>
+          <SellerRoute
+            path="/orderlist/seller"
+            component={OrderListScreen}
+          ></SellerRoute>
           <Route path="/" component={HomeScreen} exact></Route>
 
         </main>
