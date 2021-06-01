@@ -23,6 +23,10 @@ import ProfileScreen from './screens/ProfileScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import SellerRoute from './components/SellerRoute';
+import SellerScreen from './screens/SellerScreen';
+import SearchBox from './components/SearchBox';
+import SearchScreen from './screens/SearchScreen';
+
 
 //import { Route } from 'react-router-dom/cjs/react-router-dom.min';
 //import { IntlProvider, FormattedMessage } from "react-intl";
@@ -47,6 +51,14 @@ function App() {
           <div>
             <Link className="brand" to="/">Kintti Love</Link>
           </div>
+          <div>
+            <Route
+              render={({ history }) => (
+                <SearchBox history={history}></SearchBox>
+              )}
+            ></Route>
+          </div>
+
           <div>
             <Link to="/cart">Cart
             {cartItems.length > 0 && (
@@ -74,7 +86,7 @@ function App() {
                   <Link to="/signin">Sign In</Link>
                 )
             }
-             {userInfo && userInfo.isSeller && (
+            {userInfo && userInfo.isSeller && (
               <div className="dropdown">
                 <Link to="#admin">
                   Seller <i className="fa fa-caret-down"></i>
@@ -113,6 +125,7 @@ function App() {
           </div>
         </header>
         <main>
+          <Route path="/seller/:id" component={SellerScreen}></Route>
           <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route path="/product/:id" component={ProductScreen} exact></Route>
           <Route
@@ -127,11 +140,16 @@ function App() {
           <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/order/:id" component={OrderScreen}></Route>
           <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
+          <Route
+            path="/search/name/:name?"
+            component={SearchScreen}
+            exact
+          ></Route>
           <PrivateRoute
             path="/profile"
             component={ProfileScreen}
           ></PrivateRoute>
-           <AdminRoute
+          <AdminRoute
             path="/productlist"
             component={ProductListScreen}
             exact

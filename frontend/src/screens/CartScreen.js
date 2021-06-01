@@ -11,7 +11,7 @@ export default function CartScreen(props) {
         ? Number(props.location.search.split('=')[1])
         : 1;
     const cart = useSelector((state) => state.cart);
-    const { cartItems } = cart;
+    const { cartItems, error } = cart;
     console.log(productId);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -30,6 +30,7 @@ export default function CartScreen(props) {
         <div className="row top">
             <div className="col-2">
                 <h1>Shopping Cart</h1>
+                {error && <MessageBox variant="danger">{error}</MessageBox>}
                 {cartItems.length === 0 ? <MessageBox>Cart is Empty.
                 <Link to="/" > ...Go Shopping</Link>
                 </MessageBox>
@@ -53,7 +54,7 @@ export default function CartScreen(props) {
                                                     onChange={(e) =>
                                                         dispatch(
                                                             addToCart(item.product, Number(e.target.value))
-                                                          )
+                                                        )
                                                     }
                                                 >
                                                     {[...Array(item.countInStock).keys()].map((x) => (
@@ -64,11 +65,11 @@ export default function CartScreen(props) {
                                                 </select>
                                             </div>
                                             <div>
-                                                $ {item.price}
+                                                US$ {item.price}
                                             </div>
                                             <div>
                                                 <button type="button" onClick={() => removeFromCartHandler(item.product)}>
-                                                    Delete
+                                                    Remove
                                                 </button>
                                             </div>
                                         </div>

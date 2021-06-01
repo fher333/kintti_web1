@@ -22,12 +22,12 @@ body {
     'main'
     'footer';
   grid-template-columns: 1fr;
-  grid-template-rows: 9rem 1fr 5rem; 
+  grid-template-rows: 5rem 1fr 5rem;
   height: 100%;
 }
 header {
   grid-area: header;
-  background-color: #cf1cc6;
+  background-color: #203040;
 }
 main {
   grid-area: main;
@@ -35,7 +35,7 @@ main {
 }
 footer {
   grid-area: footer;
-  background-color: #cf1cc6;
+  background-color: #203040;
   color: #ffffff;
 }
 /* Common */
@@ -73,8 +73,6 @@ button {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f8f8;
-  cursor: pointer;
 }
 button {
   background-color: #f8f8f8;
@@ -84,19 +82,10 @@ input:hover,
 select:hover,
 textarea:hover,
 button:hover {
-  border: 0.1rem #3005ec solid;
+  border: 0.1rem #404040 solid;
 }
 button.primary {
-  background-color: #e0c2e4;
-  
-}
-
-button.secundary {
-  background-color: #d8b8e6;
-}
-button.media{
-  width: 100%;
-  
+  background-color: #f0c040;
 }
 button.block {
   width: 100%;
@@ -223,7 +212,7 @@ img.large {
 }
 /* Rating */
 .rating span {
-  color: #ec10cf;
+  color: #f0c040;
   margin: 0.1rem;
 }
 .rating span:last-child {
@@ -298,8 +287,8 @@ img.large {
   font-weight: bold;
 }
 .checkout-steps > div.active {
-  border-top-color: #e800f0;
-  color: #e800f0;
+  border-top-color: #f08000;
+  color: #f08000;
 }
 /* Table */
 .table {
@@ -477,17 +466,4 @@ img.large {
 }
 .support-users .unread {
   background-color: #f02020;
-}
-
-.PhoneInput{
-  
-  --PhoneInputCountryFlag-aspectRatio: 0.333;
-}
-
-.heighttext{
-  height:8px
-}
-
-.heightbutton{
-  height: 30px
 }

@@ -19,7 +19,7 @@ export default function ProductScreen(props) {
 
     const addToCartHandler = () => {
         props.history.push(`/cart/${productId}?qty=${qty}`);
-      };
+    };
 
     return (
 
@@ -34,7 +34,7 @@ export default function ProductScreen(props) {
 
 
                         <div>
-                            <Link to="/">Back to Result</Link>
+                            <Link to="/">Back to Girls Result</Link>
                             <div className="row top">
                                 <div className="col-2">
                                     <img className="large" src={product.image} alt={product.name}></img>
@@ -45,6 +45,7 @@ export default function ProductScreen(props) {
                                             <h1>
                                                 {product.name}
                                             </h1>
+                                            <Link to={`/product/${product._id}`}>Number Phone: {product.phone}</Link>
                                         </li>
                                         <li>
 
@@ -53,21 +54,34 @@ export default function ProductScreen(props) {
 
                                         </li>
                                         <li>
-                                            Price:{product.price}
+                                            Price for access: US$ {product.price}
                                         </li>
                                         <li>
-                                            Description: <p>{product.description}</p>
+                                            <b>Looking for:</b> <p>{product.description}</p>
                                         </li>
+                                        
                                     </ul>
                                 </div>
                                 <div className="col-1">
                                     <div className="card card-body">
                                         <ul>
                                             <li>
+                                                Agency{' '}
+                                                <h2>
+                                                    <Link to={`/seller/${product.seller._id}`}>
+                                                        {product.seller.seller.name}
+                                                    </Link>
+                                                </h2>
+                                                <Rating
+                                                    rating={product.seller.seller.rating}
+                                                    numReviews={product.seller.seller.numReviews}
+                                                ></Rating>
+                                            </li>
+                                            <li>
                                                 <div className="row">
 
-                                                    <div>Price</div>
-                                                    <div className="price">${product.price}</div>
+                                                    <div>Buy access by =</div>
+                                                    <div className="price">US$ {product.price}</div>
                                                 </div>
                                             </li>
 
@@ -77,8 +91,8 @@ export default function ProductScreen(props) {
                                                     <div>Status</div>
                                                     <div >
                                                         {
-                                                            product.countInStock > 0 ? (<span className="success">Number Available</span>) :
-                                                                (<span className="danger">Number Unavailable</span>)
+                                                            product.countInStock > 0 ? (<span className="success">Number Phone Available</span>) :
+                                                                (<span className="danger">Number Phone Unavailable</span>)
                                                         }
                                                     </div>
                                                 </div>
@@ -89,7 +103,7 @@ export default function ProductScreen(props) {
                                                         <li>
                                                             <div className="row">
                                                                 <div>
-                                                                    Weeks Access
+                                                                    Weeks Access # Phone
                                                             </div>
                                                                 <div>
                                                                     <select value={qty}

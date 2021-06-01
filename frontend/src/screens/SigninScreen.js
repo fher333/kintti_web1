@@ -80,7 +80,7 @@ export default function SigninScreen(props) {
     );
 }
 
-{/* <div>
+/* <div>
                     <PhoneInput
                         placeholder="Enter phone number"
                         countrySelectProps={{ unicodeFlags: false }}//false muestra la bandera , true muestra el codigo del pais
@@ -91,4 +91,4 @@ Is possible: {value && isPossiblePhoneNumber(value) ? 'true' : 'false'}
 Is valid: {value && isValidPhoneNumber(value) ? 'true' : 'false'}
 National: {value && formatPhoneNumber(value)}
 International: {value && formatPhoneNumberIntl(value)}
-                </div> */}
+                </div> */
