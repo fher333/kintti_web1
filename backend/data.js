@@ -34,7 +34,8 @@ const data = {
         brand: 'Cali',
         rating: 4.5,
         numReviews: 10,
-        description: 'Busco hacer amigos'
+        description: 'Busco hacer amigos',
+        phone: '(+57) 312 445XXXX'
     },
     {
         
@@ -46,7 +47,8 @@ const data = {
         brand: 'Medellín',
         rating: 5,
         numReviews: 10,
-        description: 'Busco hacer amigos'
+        description: 'Busco hacer amigos',
+        phone: '(+57) 320 785XXXX'
     },
     {
         
@@ -58,7 +60,8 @@ const data = {
         brand: 'Bogota DC',
         rating: 3.5,
         numReviews: 10,
-        description: 'Busco hacer amigos'
+        description: 'Busco hacer amigos',
+        phone: '(+57) 313 656XXXX'
     },
     {
         
@@ -70,7 +73,8 @@ const data = {
         brand: 'Barranquilla',
         rating: 4,
         numReviews: 9,
-        description: 'Busco hacer amigos'
+        description: 'Busco hacer amigos',
+        phone: '(+57) 318 332XXXX'
     },
     {
         
@@ -82,7 +86,8 @@ const data = {
         brand: 'Manizales',
         rating: 4.5,
         numReviews: 10,
-        description: 'Busco hacer amigos'
+        description: 'Busco hacer amigos',
+        phone: '(+57) 321 495XXXX'
     },
     {
         
@@ -94,7 +99,8 @@ const data = {
         brand: 'Cucuta',
         rating: 4.5,
         numReviews: 17,
-        description: 'Busco hacer amigos'
+        description: 'Busco hacer amigos',
+        phone: '(+57) 319 451XXXX'
     },
     {
         
@@ -106,7 +112,8 @@ const data = {
         brand: 'Cartagena',
         rating: 4.5,
         numReviews: 10,
-        description: 'Busco hacer amigos'
+        description: 'Busco hacer amigos',
+        phone: '(+57) 312 499XXXX'
     },
     {
         
@@ -119,6 +126,7 @@ const data = {
         rating: 1.5,
         numReviews: 19,
         description: 'Busco hacer amigos',
+        phone: '(+57) 311 444XXXX'
     },
 ],
 };
