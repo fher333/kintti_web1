@@ -24,6 +24,7 @@ const productSchema = new mongoose.Schema(
     rating: { type: Number, required: true },
     numReviews: { type: Number, required: true },
     reviews: [reviewSchema],
+    phone: { type: String, required: true },
     
   },
   {
