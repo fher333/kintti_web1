@@ -30,7 +30,7 @@ export default function HomeScreen() {
 
   return (
     <div>
-      <h2>Top Sellers</h2>
+      <h2>Top Agencies</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
       ) : errorSellers ? (
@@ -50,7 +50,7 @@ export default function HomeScreen() {
           </Carousel>
         </>
       )}
-      <h2>Featured Products</h2>
+      <h2>Featured Girls</h2>
       {loading ? <LoadingBox></LoadingBox>  //si loading es true muestra una caja de loading, <LoadingBox> es un componente creado en la carpeta components
         :
         error ? <MessageBox variant="danger">{error}</MessageBox> // si no esta cargando pero si error es true , muestra un mesg de error, <MessageBox> es un componente creado en la carpeta components
