@@ -159,7 +159,7 @@ export const deleteUser = (userId) => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = await Axios.delete(`/api/users/${userId}`, {
-      headers: { Authorization: `Bearer ${userInfo.token}` },
+      headers: { Authorization: `Bearer ${userInfo?.token}` },
     });
     dispatch({ type: USER_DELETE_SUCCESS, payload: data });
   } catch (error) {
