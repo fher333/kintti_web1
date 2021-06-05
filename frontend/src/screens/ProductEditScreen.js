@@ -15,6 +15,7 @@ export default function ProductEditScreen(props) {
   const [countInStock, setCountInStock] = useState('');
   const [brand, setBrand] = useState('');
   const [description, setDescription] = useState('');
+  const [phone, setPhone] = useState('');
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
@@ -42,7 +43,7 @@ export default function ProductEditScreen(props) {
       setCategory(product.category);
       setCountInStock(product.countInStock);
       setBrand(product.brand);
-      setDescription(product.description);
+      setPhone(product.phone);
     }
   }, [product, dispatch, productId, successUpdate, props.history]);
   const submitHandler = (e) => {
@@ -58,6 +59,7 @@ export default function ProductEditScreen(props) {
           brand,
           countInStock,
           description,
+          phone,
         })
       );
   };
@@ -186,6 +188,16 @@ export default function ProductEditScreen(props) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
+            </div>
+            <div>
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                id="phone"
+                type="text"
+                placeholder="Enter Number Phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              ></input>
             </div>
             <div>
               <label></label>

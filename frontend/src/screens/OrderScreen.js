@@ -50,6 +50,7 @@ export default function OrderScreen(props) {
       (order && order._id !== orderId)
     ) {
       dispatch({ type: ORDER_PAY_RESET });
+      dispatch({ type: ORDER_DELIVER_RESET });
       dispatch(detailsOrder(orderId));
     } else {
       if (!order.isPaid) {

@@ -64,6 +64,8 @@ productRouter.get(
   '/seed',
   expressAsyncHandler(async (req, res) => {
     //await Product.remove({});
+    // const createdProducts = await Product.insertMany(data.products);
+    // res.send({ createdProducts });
     const seller = await User.findOne({ isSeller: true });
     if (seller) {
       const products = data.products.map((product) => ({
@@ -111,6 +113,7 @@ productRouter.post(
       rating: 0,
       numReviews: 0,
       description: 'sample description',
+      phone: '(+57) 312 444XXX',
     });
     const createdProduct = await product.save();
     res.send({ message: 'Product Created', product: createdProduct });
